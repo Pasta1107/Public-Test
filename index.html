@@ -1,10 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Project Landing Page</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section {
+      background: white;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+      margin-top: 0;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.5rem 1rem;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    .links a:hover {
+      background: #2563eb;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to My Project</h1>
-  <p>This is the landing page for my GitHub project.</p>
+
+  <header>
+    <h1>Interactive Project Launcher</h1>
+    <p>Choose a section to explore the models and run the code on Google Colab or locally via Jupyter.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h2>Section 1: Data Exploration</h2>
+      <p>Perform exploratory analysis on your dataset using interactive visualizations and summary statistics.</p>
+      <div class="links">
+        <a href="https://colab.research.google.com/drive/your_colab_id_1" target="_blank">Open in Colab</a>
+        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section1.ipynb" target="_blank">View Notebook</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Section 2: Model Training</h2>
+      <p>Train your machine learning model with customizable parameters and visual feedback.</p>
+      <div class="links">
+        <a href="https://colab.research.google.com/drive/your_colab_id_2" target="_blank">Open in Colab</a>
+        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section2.ipynb" target="_blank">View Notebook</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Section 3: Evaluation and Analysis</h2>
+      <p>Evaluate model performance and visualize results to guide next steps.</p>
+      <div class="links">
+        <a href="https://colab.research.google.com/drive/your_colab_id_3" target="_blank">Open in Colab</a>
+        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section3.ipynb" target="_blank">View Notebook</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Launch SDL Program</h2>
+      <p>Ready to run the full Software Defined Lab workflow? Click below to get started.</p>
+      <div class="links">
+        <a href="https://sdl-platform-link.com" target="_blank">Launch SDL</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    © 2025 Your Name or Lab · Powered by GitHub Pages
+  </div>
+
 </body>
 </html>
