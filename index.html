@@ -2,109 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Project Landing Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User’s Guide · Self-Driven Lab</title>
+
+  <!-- ===== BASE STYLES ===== -->
   <style>
+    :root {
+      --accent: #cc0033;          /* header + borders */
+      --primary: #3b82f6;         /* buttons */
+      --primary-dark: #2563eb;
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --text: #333;
+      --radius: 10px;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    }
+
+    * { box-sizing: border-box; }
     body {
-      font-family: "Segoe UI", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
+
+    /* ===== HEADER ===== */
     header {
-      background: #CC0033;
-      color: white;
-      padding: 2rem;
+      background: var(--accent);
+      color: #fff;
       text-align: center;
+      padding: 3rem 1rem 2.5rem;
     }
-    h1 {
-      margin: 0;
-    }
+    header h1 { margin: 0 0 0.5rem; }
+
+    /* ===== LAYOUT ===== */
     .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+      max-width: 1050px;
+      margin: -3rem auto 4rem;      /* pulls cards up into header curve */
+      padding: 0 1.25rem;
     }
-    .section {
-      background: white;
-      padding: 1.5rem;
-      margin: 1rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
     }
-    .section h2 {
-      margin-top: 0;
+
+    /* ===== CARD ===== */
+    .card {
+      background: var(--card-bg);
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.75rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .links a {
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+    .card h2 {
+      margin: 0 0 0.55rem;
+      font-size: 1.25rem;
+    }
+    .card p { margin: 0 0 1rem; }
+
+    /* ===== BUTTON ===== */
+    .btn {
       display: inline-block;
-      margin: 0.5rem 1rem 0.5rem 0;
-      padding: 0.5rem 1rem;
-      background: #3b82f6;
-      color: white;
+      padding: 0.55rem 1.2rem;
+      margin: 0.35rem 0.4rem 0 0;
+      background: var(--primary);
+      color: #fff;
       text-decoration: none;
       border-radius: 4px;
+      font-size: 0.95rem;
+      transition: background 0.15s ease;
     }
-    .links a:hover {
-      background: #2563eb;
-    }
-    .footer {
+    .btn:hover { background: var(--primary-dark); }
+
+    /* ===== FOOTER ===== */
+    footer {
       text-align: center;
-      padding: 2rem;
+      color: #666;
+      padding: 2.5rem 1rem 3rem;
       font-size: 0.9rem;
-      color: #555;
     }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- ===== HERO ===== -->
   <header>
-    <h1>Interactive Project Launcher</h1>
-    <p>Choose a section to explore the models and run the code on Google Colab or locally via Jupyter.</p>
+    <h1>User’s Guide to Your First Self-Driven Lab</h1>
+    <p>Hands-on Colab tutorials, Jupyter notebooks, SDL software, build guides &amp; schematics in one place.</p>
   </header>
 
-  <div class="container">
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="container">
 
-    <div class="section">
-      <h2>Section 1: Data Exploration</h2>
-      <p>Perform exploratory analysis on your dataset using interactive visualizations and summary statistics.</p>
-      <div class="links">
-        <a href="https://colab.research.google.com/drive/your_colab_id_1" target="_blank">Open in Colab</a>
-        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section1.ipynb" target="_blank">View Notebook</a>
-      </div>
+    <!-- Hands-on Tutorial heading -->
+    <section class="card" style="border:none; box-shadow:none; padding-bottom:0;">
+      <h2 style="margin-bottom:0;">🧪 Hands-on Tutorial</h2>
+      <p style="margin-top:0;">Work through practical examples using Google Colab or local notebooks.</p>
+    </section>
+
+    <!-- Tutorial Cards -->
+    <div class="cards-grid">
+
+      <!-- Section 1 -->
+      <section class="card">
+        <h2>Section 1 · Data Exploration</h2>
+        <p>Explore your dataset with interactive visualizations and summary statistics.</p>
+        <div>
+          <a class="btn" href="https://colab.research.google.com/drive/your_colab_id_1" target="_blank">Open in Colab</a>
+          <a class="btn" href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section1.ipynb" target="_blank">View Notebook</a>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="card">
+        <h2>Section 2 · Model Training</h2>
+        <p>Train a model with customizable parameters and visual feedback.</p>
+        <div>
+          <a class="btn" href="https://colab.research.google.com/drive/your_colab_id_2" target="_blank">Open in Colab</a>
+          <a class="btn" href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section2.ipynb" target="_blank">View Notebook</a>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="card">
+        <h2>Section 3 · Evaluation &amp; Analysis</h2>
+        <p>Assess model performance and visualize results to guide next steps.</p>
+        <div>
+          <a class="btn" href="https://colab.research.google.com/drive/your_colab_id_3" target="_blank">Open in Colab</a>
+          <a class="btn" href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section3.ipynb" target="_blank">View Notebook</a>
+        </div>
+      </section>
+
+      <!-- SDL Program -->
+      <section class="card">
+        <h2>🚀 Launch SDL Program</h2>
+        <p>Run the full Software-Defined Lab workflow in your browser.</p>
+        <div>
+          <a class="btn" href="https://sdl-platform-link.com" target="_blank">Launch SDL</a>
+        </div>
+      </section>
+
     </div>
+  </main>
 
-    <div class="section">
-      <h2>Section 2: Model Training</h2>
-      <p>Train your machine learning model with customizable parameters and visual feedback.</p>
-      <div class="links">
-        <a href="https://colab.research.google.com/drive/your_colab_id_2" target="_blank">Open in Colab</a>
-        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section2.ipynb" target="_blank">View Notebook</a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Section 3: Evaluation and Analysis</h2>
-      <p>Evaluate model performance and visualize results to guide next steps.</p>
-      <div class="links">
-        <a href="https://colab.research.google.com/drive/your_colab_id_3" target="_blank">Open in Colab</a>
-        <a href="https://github.com/yourusername/yourrepo/blob/main/notebooks/section3.ipynb" target="_blank">View Notebook</a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Launch SDL Program</h2>
-      <p>Ready to run the full Software Defined Lab workflow? Click below to get started.</p>
-      <div class="links">
-        <a href="https://sdl-platform-link.com" target="_blank">Launch SDL</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    © 2025 Your Name or Lab · Powered by GitHub Pages
-  </div>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 Your Name / Lab · Powered by GitHub Pages
+  </footer>
 
 </body>
 </html>
